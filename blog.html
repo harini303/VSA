@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vetri software</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* body {
+            background-image: url(images/bg-texture.png);
+        } */
+
+        .topic {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .topic h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .topic hr {
+            width: 60px;
+            height: 3px;
+            background-color: #e91e63;
+            border: none;
+            margin: 10px auto;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .content {
+            flex: 2;
+        }
+
+        .content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .content .metadata {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #ffffff;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            line-height: 1.6;
+            color: #e1bfbf;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color:#424890;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e91e63;
+            padding-bottom: 5px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        .sidebar ul li a:hover {
+            color: #e91e63;
+        }
+
+        .cards-container {
+            display: flex;
+            gap: 60px;
+            padding: 40px;
+            justify-content: center;
+            background-color: #1e1e50;
+        }
+
+        .card {
+            background-color: #2a2a72;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 4px solid #4d4d94;
+        }
+
+        .card .category {
+            margin: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #4d4d94;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .card h3 {
+            margin: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin: 10px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #cfcfea;
+        }
+
+        .card .author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px;
+            font-size: 0.8rem;
+            color: #9d9df4;
+        }
+
+        .card .author img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .containerp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .text-container {
+            flex: 1;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .button {
+            background-color: #ff6699;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .chat-icon {
+            background-color: #3366ff;
+            color: white;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .chat-icon::before {
+            content: "\f075";
+            font-family: FontAwesome;
+            font-size: 20px;
+        }
+
+        .chat-icon::after {
+            content: "\f076";
+            font-family: FontAwesome;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .containerc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .head {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .text {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 150px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .containert {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .left {
+            width: 50%;
+            text-align: center;
+        }
+
+        .right {
+            width: 40%;
+        }
+
+        .timer {
+            font-size: 4em;
+            margin-top: 20px;
+        }
+
+        .timer-label {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        form {
+            border: 1px solid white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: #edecfc;
+            color: rgb(12, 11, 11);
+        }
+
+        button {
+            background-color: #f75842;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .containerc {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: #6c63ff;
+        }
+
+        .benefits-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .benefit-item img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .benefit-item div {
+            max-width: 80%;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.2rem;
+            margin: 0 0 5px;
+            font-weight: bold;
+        }
+
+        .benefit-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #f9cece;
+        }
+
+        .certificate-section {
+            text-align: center;
+        }
+
+        .certificate-img {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav__container">
+            <a href="index.html">
+                <h4>Vetri Software Academy</h4>
+            </a>
+            <ul class="nav__menu">
+
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Blog</a></li>
+                <li><a href="index.html">Events</a></li>
+
+            </ul>
+
+            <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+    </nav>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <h2>Register For Join With Us </h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password"
+                required>
+
+            <button type="submit">Register</button>
+            <div class="extra">
+                Already have an account? <a href="#">Login here</a>
+            </div>
+
+            <div class="close-popup" onclick="closePopup()">Close</div>
+        </div>
+    </div>
+    <section>
+        <div class="topic">
+            <h1>Recent Blogs</h1>
+            <hr>
+        </div>
+
+        <div class="cards-container">
+            <div class="card">
+                <img src="images/course11.jpg" alt="VR Technology">
+                <span class="category">Web Development</span>
+                <h3>Making this the first true generator on the Internet</h3>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration...</p>
+                <div class="author">
+                    <img src="images/avatar1.jpg" alt="Author">
+                    <span>By: Daniel Vinyo</span>
+                    <span>Jun 08, 2022 - 22:47</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/course14.jpg" alt="Robotics">
+                <span class="category">Mernstack</span>
+                <h3>Finibus Bonorum et Malorum by Cicero also reproduced</h3>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page
+                    when...</p>
+                <div class="author">
+                    <img src="images/avatar2.jpg" alt="Author">
+                    <span>By: Diana Ayi</span>
+                    <span>Jun 08, 2022 - 22:35</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/course15.jpg" alt="Fruits">
+                <span class="category">Placement</span>
+                <h3>Lorem Ipsum or Lipsum. Where does it come from?</h3>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration...</p>
+                <div class="author">
+                    <img src="images/avatar3.jpg" alt="Author">
+                    <span>By: Diana Ayi</span>
+                    <span>Jun 08, 2022 - 22:32</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="topic">
+            <h1>VSA Blogs</h1>
+            <hr>
+        </div>
+
+        <div class="main-container">
+            <div class="content">
+                <img src="images/blog1.jpg" alt="Web Development Roadmap">
+                <h2>Web Development Roadmap: Step-by-Step Guide to a Fulfilling Career</h2>
+                <div class="metadata">
+                    <span>Jayakumar Balasubramanian</span>
+                    <span>May 13, 2024</span>
+                    <span>14 min read</span>
+                </div>
+                <p>Web Development Roadmap: Step-by-Step Guide to Successfully Embarking on a Fulfilling Career. Table
+                    of Contents Add a header to begin generating the table of contents Introduction Full Stack Web
+                    Development roadmap sets the foundation for navigating the ever-changing digital terrain, opting for
+                    a career as...</p>
+            </div>
+
+            <div class="sidebar">
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Web Development Roadmap: Step-by-Step Guide to a Fulfilling Career</a></li>
+                    <li><a href="#">Mastering Full Stack Developer Interview Preparation: Top 5 Soft Skills</a></li>
+                    <li><a href="#">Unlocking the Advantages of Web Development Mentorship During a Full Stack
+                            Internship</a></li>
+                    <li><a href="#">Bengaluru Tech Summit 2023: Shaping the Digital Future with Unveiled Innovations</a>
+                    </li>
+                    <li><a href="#">The Power of Visuals: Web Developer Portfolios Impress More than Resumes</a></li>
+                </ul>
+
+                <h3>Recent Comments</h3>
+                <p>No comments to show.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="main-container">
+            <div class="content">
+                <img src="images/blog2.jpg" alt="Web Development Roadmap">
+                <h2>Why JavaScript is So Popular: Advantages of JavaScript and Its Role in Web Development</h2>
+                <div class="metadata">
+                    <span>Jayakumar Balasubramanian</span>
+                    <span>May 13, 2024</span>
+                    <span>14 min read</span>
+                </div>
+                <p>Web Development Roadmap: Step-by-Step Guide to Successfully Embarking on a Fulfilling Career. Table
+                    of Contents Add a header to begin generating the table of contents Introduction Full Stack Web
+                    Development roadmap sets the foundation for navigating the ever-changing digital terrain, opting for
+                    a career as...</p>
+            </div>
+
+            <div class="sidebar">
+                <h3>Archives</h3>
+                <ul>
+                    <li><a href="#">Dec 2024</a></li>
+                    <li><a href="#">Nov 2024</a></li>
+                    <li><a href="#">Oct 2024</a></li>
+                    <li><a href="#">Sept 2024</a></li>
+                    <li><a href="#">Aug 2024</a></li>
+                    <li><a href="#">July 2024</a></li>
+                    <li><a href="#">Jun 2024</a></li>
+                    <li><a href="#">May 2024</a></li>
+                    <li><a href="#">Apr 2024</a></li>
+                    <li><a href="#">Mar 2024</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <br><br>
+        <div class="main-container">
+            <div class="content">
+                <img src="images/blog3.jpg" alt="Web Development Roadmap">
+                <h2>Unlocking the Advantages of Web Development Mentorship During a Full Stack Internship</h2>
+                <div class="metadata">
+                    <span>Jayakumar Balasubramanian</span>
+                    <span>May 13, 2024</span>
+                    <span>14 min read</span>
+                </div>
+                <p>Web Development Roadmap: Step-by-Step Guide to Successfully Embarking on a Fulfilling Career. Table
+                    of Contents Add a header to begin generating the table of contents Introduction Full Stack Web
+                    Development roadmap sets the foundation for navigating the ever-changing digital terrain, opting for
+                    a career as...</p>
+            </div>
+
+            <div class="sidebar">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Career Building (5)</a></li>
+                    <li><a href="#">FullStack Web Developer Interviews (4)</a></li>
+                    <li><a href="#">MERN Stack (4)</a></li>
+                    <li><a href="#">Project Portfolio (3)</a></li>
+                    <li><a href="#">Placement Preparation (2)</a></li>
+                    <li><a href="#">Web Development (4)</a></li>
+                    <li><a href="#">Online Internship (2)</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="containerp">
+            <div class="text-container">
+                <h1>Placement Update</h1>
+                <p>100+ Companies are ready to hire VSA students</p>
+                <p>Multiple surveys conducted by all popular job portals reveal the Full Stack Web Developer especially
+                    with
+                    MERN stack skills is the most difficult to fill position in the tech industry.</p>
+                <br>
+                <a href="#" class="button">Learn More</a>
+            </div>
+            <div class="image-container">
+                <img src="https://www.webstackacademy.com/wp-content/uploads/2022/09/Recent-Placements.png"
+                    alt="Placement Update" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="containerc">
+            <h1 class="head">VSA Placement Clients</h1>
+            <hr style="width: 10%; height: 2px; background-color: #ff0080;">
+            <p class="text">Over the years VSA has forged strong relationships with 100+ companies for placements.
+                <br>These companies can be New-age startups, Mid-sized organizations to MNC R&D centers. Here is a
+                snapshot of our growing list of placement clients.
+            </p>
+
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/IBM.png" alt="6energy logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Alethea_.png"
+                        alt="ACCESS logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Infrrd.png" alt="Adani logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2024/08/Rakuten.png" alt="Amazon logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Lenovo-India.png"
+                        alt="Google logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Bluebird.png"
+                        alt="Microsoft logo">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Educational-Initiatives.png"
+                        alt="6energy logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Infrrd.png" alt="ACCESS logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Pratilipi-2.png"
+                        alt="Adani logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Epicor-2.png"
+                        alt="Amazon logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/02/Tarana-1.png"
+                        alt="Google logo">
+                </div>
+                <div class="logo">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Getcogno.png"
+                        alt="Microsoft logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+        <div class="containert">
+            <div class="left">
+                <h1>Become a Industry-Ready<br>Web Developer</h1>
+                <p>Take your first step by talking to our expert career counselor by registering.</p>
+                <h2>Next Batch starts on : 12th Jan 2025</h2>
+                <h1>Register Now</h1>
+                <div class="timer">
+                    <span id="days">00 </span> :
+                    <span id="hours">00 </span> :
+                    <span id="minutes">00 </span> :
+                    <span id="seconds">00 </span>
+                    <div class="timer-label">
+                        <span>DAYS</span> <span>HOURS</span> <span>MINUTES</span> <span>SECONDS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Registration Form</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Phone Number" required>
+                    <select required>
+                        <option value="">Select Course</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="data-science">Data Science</option>
+                        <option value="ui-ux-design">UI/UX Design</option>
+                        <option value="ui-ux-design">UI/UX Design</option>
+                        <option value="ui-ux-design">UI/UX Design</option>
+                    </select>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+
+        <div class="containerc">
+            <h1 class="head">Upgrade Your Skills With Us</h1>
+            <hr style="width: 10%; height: 2px; background-color: #ff0080;">
+            <p>FutureSkills Prime is India's technology skilling hub that aims to make it a Digital Talent Nation. VSA
+                has partnered with FutureSkills as our courses are in alignment with the National Skills Qualifications
+                Framework (NSQF). As a student, you will be benefited as follows.</p>
+
+            <h2>Benefits</h2>
+            <div class="benefits-section">
+                <div class="benefit-item">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Recognized-Certification-1.svg" alt="Certification Icon">
+                    <div>
+                        <h3>Recognized Certification</h3>
+                        <p>FutureSkills Prime is a well-recognized certification by the industry. Leverage it for your
+                            long-term career benefits.</p>
+                    </div>
+                </div>
+               
+                <div class="benefit-item">
+                    <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Grade-Points-with-College-1.svg" alt="Grade Points Icon">
+                    <div>
+                        <h3>Grade Points with College</h3>
+                        <p>Some of the colleges recognize this course. By doing it as part of your college curriculum,
+                            you can leverage it as Grade Points with your College.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certificate-section">
+                <h2>Certification</h2>
+                <img src="images/certificate.png" alt="Certificate Preview" class="certificate-img">
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container footer__container">
+            <div class="footer__1">
+                <a href="index.html" class="footer__logo">
+                    <h4>VetriSoftware</h4>
+                </a>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis.
+                </p>
+            </div>
+            <div class="footer__2">
+                <h4>Permalinks</h4>
+                <ul class="permalinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__3">
+                <h4>Privacy</h4>
+                <ul class="privacy">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and conditions</a></li>
+                    <li><a href="#">Payments</a></li>
+                </ul>
+            </div>
+            <div class="footer__4">
+                <h4>Contact Us</h4>
+                <div>
+                    <p>8112756490</p>
+                    <p>vetriitsystems@gmail.com</p>
+                </div>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="uil uil-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer__copyright">
+            <small>copyright &copy; Vetrisoftware</small>
+        </div>
+    </footer>
+    <div class="icon-container">
+        <div class="icon whatsapp-icon" onclick="window.open('https://wa.me/1234567890?text=Hello!', '_blank')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </div>
+        <div class="icon phone-icon" onclick="window.location.href='tel:+1234567890'">
+            <img src="https://cdn0.iconfinder.com/data/icons/essentials-solid-glyphs-vol-1/100/Phone-Call-Telephone-512.png"
+                alt="Phone">
+        </div>
+        <div class="icon" style="background-color: #f39c12;" onclick="toggleChatbot()">
+            <img src="https://cdn-icons-png.flaticon.com/512/5911/5911090.png" alt="Chat">
+        </div>
+    </div>
+    <div id="chatbot-container">
+        <div id="chatbot-header">Ask About Academy</div>
+        <div id="chatbot-body"></div>
+        <div id="chatbot-input">
+            <input id="chatbot-message" type="text" placeholder="Type your question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

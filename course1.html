@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vetri software</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* body {
+            background-image: url(images/bg-texture.png);
+        } */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .content {
+            max-width: 60%;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin: 10px 0 20px;
+        }
+
+        .content .highlight {
+            background-color: #0E86D4;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .content .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .content .buttons a {
+            text-decoration: none;
+            color: #FFFFFF;
+            background-color: #6c63ff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .content .buttons a:hover {
+            background-color: #ca0606;
+        }
+
+        .content .seats {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .laptop-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            padding: 20px 40px;
+            gap: 10rem;
+
+
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats div h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #f75842;
+        }
+
+        .stats div p {
+            font-size: 14px;
+            color: #6c63ff;
+        }
+
+        /* expanation */
+        .explain {
+            background-color: #2e3267;
+            padding: 50px;
+            display: flex;
+
+        }
+
+        .explain h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .explain h1 span {
+            color: #f75842;
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 1rem;
+            /* color: #555; */
+
+        }
+
+        .icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .icons .icon {
+            text-align: center;
+        }
+
+        .icons img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .icons .arrow {
+            font-size: 1.5rem;
+            color: #f75842;
+        }
+
+        /* property */
+        .container__pop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+  
+        }
+
+        .card {
+            border: 1px solid #ffffff;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .card:hover {
+            box-shadow: 0 3rem 3rem rgba(233, 232, 232, 0.3);
+            z-index: 1;
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #f75842;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #6c63ff;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .curriculum-section {
+            background-color: #2e3267;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .curriculum-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .curriculum-card {
+            background-color: #2e3267;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(248, 248, 248, 0.2);
+        }
+
+        .curriculum-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #6c63ff;
+        }
+
+        .curriculum-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .curriculum-card ul li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .curriculum-card ul li::before {
+            content: "✔️";
+            color: #0E86D4;
+            margin-right: 10px;
+        }
+
+        .download {
+            width: 600px;
+            height: 400px;
+            background-color: #f75842;
+            color: #ffffff;
+        }
+
+        /* workfow */
+        .container2 {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .heading h1 {
+            font-size: 2.5rem;
+            color: #f7f7f7;
+        }
+
+        .heading p {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .flow-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: #6c63ff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .step .content {
+            flex: 1;
+        }
+
+        .step .content h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 0 0 5px;
+        }
+
+        .step .content p {
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .step .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #f75842;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav__container">
+            <a href="index.html">
+                <h4>Vetri Software Academy</h4>
+            </a>
+            <ul class="nav__menu">
+
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Blog</a></li>
+                <li><a href="index.html">Events</a></li>
+            </ul>
+            <button>register</button>
+            <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+            <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <div class="content">
+                <h1><span style="color: #E63946;">LIVE CLASSES</span> FOR</h1>
+                <h1>FRONTEND DEVELOPMENT</h1>
+                <p>Become a Professional Frontend Developer in just 3 Months!</p>
+                <p>Application closes on <strong>09 Jan 2025</strong></p>
+                <div class="buttons">
+                    <!-- <a href="#">KNOW MORE</a> -->
+                    <a href="#">ENROLL NOW</a>
+                </div>
+                <p class="seats">Seats Remaining: 16</p>
+            </div>
+            <div class="laptop-image">
+                <img src="https://www.webstackacademy.com/wp-content/uploads/2023/01/Front-End-Hero.png"
+                    alt="Laptop with code and video call">
+            </div>
+        </div>
+
+        <div class="stats">
+            <div>
+                <h2>8%</h2>
+                <p><b>Increase in Job Growth</b></p>
+            </div>
+            <div>
+                <h2>3.3X</h2>
+                <p>Increase in Demand</p>
+            </div>
+            <div>
+                <h2>₹15 LAKH</h2>
+                <p>Average Salary Package</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- explanation -->
+
+    <div class="explain">
+        <h1> Frontend Web Developer Course with ReactJS - <span>Structure</span></h1>
+        <p class="description">WSA Frontend Developer Course with Placement is well-structured to make you develop
+            best-in-class UI by giving best UX for the Along with development, you will be ensuring it scales well
+            across PC, tablet, and mobile screens.</p>
+    </div>
+    <section>
+        <div class="icons">
+            <div class="icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png"
+                    alt="HTML5">
+                <p>HTML5</p>
+            </div>
+            <span class="arrow">&#8594;</span>
+            <div class="icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRscc-cwCQQunXWnMDfXTeeUHeTOgU9GFmHbw&s"
+                    alt="CSS3">
+                <p>CSS3</p>
+            </div>
+            <span class="arrow">&#8594;</span>
+            <div class="icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png"
+                    alt="Bootstrap">
+                <p>Bootstrap</p>
+            </div>
+            <span class="arrow">&#8594;</span>
+            <div class="icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpuYdLEzBvwemix8pwsncUkLLOQqnByncadg&s"
+                    alt="JavaScript">
+                <p>Js & jQuery</p>
+            </div>
+            <span class="arrow">&#8594;</span>
+            <div class="icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz34OmNVyIMh1rguNfXC3MBk7Qq3DTduJVVg&s"
+                    alt="React.js">
+                <p>React.js</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- property -->
+    <section>
+        <h2>Features</h2>
+        <div class="container__pop">
+            <div class="card">
+               <i class='bx bx-time-five'></i>
+                <h3>Course Duration</h3>
+                <p>3 Months</p>
+            </div>
+            <div class="card">
+              <i class='bx bxs-institution'></i>
+                <h3>Delivery Mode</h3>
+                <p>Live Classes</p>
+            </div>
+            <div class="card">
+                <i class='bx bxs-timer'></i>
+                <h3>Daily Duration</h3>
+                <p>5 Hours (Class & Projects)</p>
+            </div>
+            <div class="card">
+           <i class='bx bx-calendar-check'></i>
+                <h3>Doubt Clearing</h3>
+                <p>live Sessions</p>
+            </div>
+            <div class="card">
+               <i class='bx bxs-user-detail'></i>
+                <h3>Online Portfolio</h3>
+                <p>4-5 projects to showcase</p>
+            </div>
+            <div class="card">
+             <i class='bx bx-file'></i>
+                <h3>Workshops</h3>
+                <p>Resume & Interview Prep</p>
+            </div>
+
+            <div class="card">
+             <i class='bx bx-group'></i>
+                <h3>Mock Interviews</h3>
+                <p>Company & Industry Specific</p>
+            </div>
+            <div class="card">
+                <i class='bx bx-award'></i>
+                <h3>Certification</h3>
+                <p>Completion Certificate</p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section>
+
+        <div class="curriculum-section">
+            <h2>Curriculum Overview</h2>
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <h3>Module 1: HTML Basics</h3>
+                    <ul>
+                        <a href=""><i class='bx bx-time-five'></i><span>24hours</span></a>
+                        <li>Introduction to HTML</li>
+                        <li>HTML Tags and Structure</li>
+                        <li>Forms and Input Elements</li>
+                        <li>HTML blocks and layouts</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h3>Module 2: CSS Styling</h3>
+                    <ul>
+                        <a href=""><i class='bx bx-time-five'></i><span>32hours</span></a>
+                        <li>CSS Basics</li>
+                        <li>CSS Selectors and Properties</li>
+                        <li>Responsive Design</li>
+                        <li>CSS Flexbox and Grid</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h3>Module 3: JavaScript </h3>
+                    <ul>
+                        <a href=""><i class='bx bx-time-five'></i><span>64hours</span></a>
+                        <li>JavaScript Basics</li>
+                        <li>OO Programming with JS</li>
+                        <li>Control Structures</li>
+                        <li>DOM Manipulation</li>
+                    </ul>
+                </div>
+
+            </div>
+            <br><br>
+            <div class="curriculum-grid">
+
+                <div class="curriculum-card">
+                    <h3>Module 4: Bootstrap</h3>
+                    <ul>
+                        <a href=""><i class='bx bx-time-five'></i><span>12hours</span></a>
+                        <li>Bootstrap Basics</li>
+                        <li>Grid and Themes</li>
+                        <li> Bootstrap CSS </li>
+                        <li>Bootstrap Js</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h3>Module 5: jQuery</h3>
+                    <ul>
+                        <a href=""><i class='bx bx-time-five'></i><span>10hours</span></a>
+                        <li>jQuery Basics</li>
+                        <li>Selectors and AJAX</li>
+                        <li>Event And Effect</li>
+                        <li>Traversing</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h3>Module 3: ReactJS</h3>
+                    <ul>
+                        <a href=""><i class='bx bx-time-five'></i><span>36hours</span></a>
+                        <li>Components</li>
+                        <li>State and Event binding</li>
+                        <li>Routing And Navigation</li>
+                        <li>Authentication</li>
+                    </ul>
+                </div>
+               
+
+            </div>
+            <br>
+            <br>
+          
+            <div class="dwn-button">
+                <a href="pdf/frontenedsyllabus.pdf" download class="btn">
+                    Download Syllabus<i class="uil uil-file-alt"></i>
+                </a>
+            </div>
+        </div>
+
+    </section>
+<section>
+    <div class="container2">
+        <div class="heading">
+            <h1>Learning Flow in VSA</h1>
+            <p>For our VSA students, not even a single day goes without learning. With a proper mixture of theoretical learning, hands-on sessions, assignments and special sessions makes learning very engaging and effective. Have a look at how your learning flow looks in VSA.</p>
+        </div>
+        <div class="flow-section">
+            <div class="step">
+                <div class="number">1</div>
+                <div class="content">
+                    <h3>Live Classes</h3>
+                    <p>Mentors will be taking you through live Live classes by explaining concepts and its real-time use-case demonstration. Interact and build a sound understanding of concepts on a daily basis.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="number">2</div>
+                <div class="content">
+                    <h3>Structured Interventions</h3>
+                    <p>Apply your learnings from Live Classes by creating assignments and projects on your own. This will be facilitated by structured online intervention sessions with our mentors which include assignment/project explainer and its expected output.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="number">3</div>
+                <div class="content">
+                    <h3>Unlimited Doubt Clearing</h3>
+                    <p>When you actually start coding you will get stuck somewhere or get doubts. Use our  learning platform to clarify your doubts from 9 AM to 7 PM with our  mentors.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="number">4</div>
+                <div class="content">
+                    <h3>Project Execution</h3>
+                    <p>Start working on project implementation as per the requirements given by the mentor. There will be intermediate checkpoints which you need to complete and show your output.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="number">5</div>
+                <div class="content">
+                    <h3>Project Review and Feedback</h3>
+                    <p>Every learning activity in VSA comes with a submission deadline. You are supposed to submit them via online with our mentors in order to kick-start your evaluation. The same happens for projects also.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="number">6</div>
+                <div class="content">
+                    <h3>Workshops & Follow-ups</h3>
+                    <p>There will be a bunch of actions happening under the  as live  classes. This includes resume preparation, interview-facing tips, subject-specific prep sessions to crack your interviews.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+    <footer>
+        <div class="container footer__container">
+            <div class="footer__1">
+                <a href="index.html" class="footer__logo">
+                    <h4>VetriSoftware</h4>
+                </a>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis.
+                </p>
+            </div>
+            <div class="footer__2">
+                <h4>Permalinks</h4>
+                <ul class="permalinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__3">
+                <h4>Privacy</h4>
+                <ul class="privacy">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and conditions</a></li>
+                    <li><a href="#">Payments</a></li>
+                </ul>
+            </div>
+            <div class="footer__4">
+                <h4>Contact Us</h4>
+                <div>
+                    <p>8112756490</p>
+                    <p>vetriitsystems@gmail.com</p>
+                </div>
+                <ul class="footer__socials">
+                    <li>
+                        <a href="#"><i class="uil uil-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="uil uil-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer__copyright">
+            <small>copyright &copy; Vetrisoftware</small>
+        </div>
+    </footer>
+
+    <script>
+        function downloadPDF() {
+            const link = document.createElement('a');
+            link.href = 'pdf/frontendsyllabus.pdf';  // Path to your PDF
+            link.download = 'frontendsyllabus.pdf';  // Name for the downloaded file
+            link.click();
+        }
+    </script>
+
+
+
+
+
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
